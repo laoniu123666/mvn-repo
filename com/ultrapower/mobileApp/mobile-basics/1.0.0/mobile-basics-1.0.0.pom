@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mobile-new-project</artifactId>
+        <groupId>com.ultrapower.mobileApp</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <packaging>pom</packaging>
+    <modules>
+        <module>mobile-eureka-server</module>
+        <module>mobile-zuul-server</module>
+        <module>mobile-admin-server</module>
+        <module>mobile-zipkin-server</module>
+        <module>mobile-manager</module>
+        <module>cloud-config</module>
+    </modules>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mobile-basics</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.1</version>
+                <configuration>
+                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo
+                    </altDeploymentRepository>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

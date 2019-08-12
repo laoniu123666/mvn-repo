@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mobile-provider</artifactId>
+        <groupId>com.ultrapower.mobileApp</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <version>1.0.0</version>
+    <artifactId>mobile-provider-quartz</artifactId>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.1</version>
+                <configuration>
+                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo
+                    </altDeploymentRepository>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ultrapower.mobileApp</groupId>
+            <artifactId>mobile-common-base</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ultrapower.mobileApp</groupId>
+            <artifactId>mobile-common-cache</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!-- 注册中心客户端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!-- quartz 模块 -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz-jobs</artifactId>
+        </dependency>
+        <!--定时任务需要依赖context模块-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <!-- pasm集成 -->
+        <dependency>
+            <groupId>com.ultrapower.mobileApp</groupId>
+            <artifactId>pasm-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ultrapower.mobileApp</groupId>
+            <artifactId>pasm-token</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ultrapower.mobileApp</groupId>
+            <artifactId>spring-rmi</artifactId>
+            <classifier>compatibility</classifier>
+        </dependency>
+
+    </dependencies>
+</project>

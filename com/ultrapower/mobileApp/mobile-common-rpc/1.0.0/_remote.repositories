@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Aug 12 16:22:25 CST 2019
+mobile-common-rpc-1.0.0.jar>=
+mobile-common-rpc-1.0.0-exec.jar>=
+mobile-common-rpc-1.0.0.pom>=
